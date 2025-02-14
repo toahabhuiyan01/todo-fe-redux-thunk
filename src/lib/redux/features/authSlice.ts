@@ -50,7 +50,7 @@ export const register = createAsyncThunk(
         } catch (error) {
             let errorMessage = "Registration failed";
             if (error instanceof AxiosError) {
-                errorMessage = error.response?.data?.error || errorMessage;
+                errorMessage = error.response?.data?.message || errorMessage;
             }
             return rejectWithValue(errorMessage);
         }
@@ -70,7 +70,7 @@ export const login = createAsyncThunk(
         } catch (error) {
             let errorMessage = "Login failed";
             if (error instanceof AxiosError) {
-                errorMessage = error.response?.data?.error || errorMessage;
+                errorMessage = error.response?.data?.message || errorMessage;
             }
             return rejectWithValue(errorMessage);
         }
@@ -88,7 +88,7 @@ export const forgotPassword = createAsyncThunk(
         } catch (error) {
             let errorMessage = "Failed to send reset email";
             if (error instanceof AxiosError) {
-                errorMessage = error.response?.data?.error || errorMessage;
+                errorMessage = error.response?.data?.message || errorMessage;
             }
             return rejectWithValue(errorMessage);
         }
@@ -104,7 +104,7 @@ export const resetPassword = createAsyncThunk(
         } catch (error) {
             let errorMessage = "Failed to reset password";
             if (error instanceof AxiosError) {
-                errorMessage = error.response?.data?.error || errorMessage;
+                errorMessage = error.response?.data?.message || errorMessage;
             }
             return rejectWithValue(errorMessage);
         }
@@ -120,7 +120,7 @@ export const fetchProfile = createAsyncThunk(
         } catch (error) {
             let errorMessage = "Failed to fetch profile";
             if (error instanceof AxiosError) {
-                errorMessage = error.response?.data?.error || errorMessage;
+                errorMessage = error.response?.data?.message || errorMessage;
             }
             return rejectWithValue(errorMessage);
         }
@@ -144,7 +144,7 @@ export const updateProfile = createAsyncThunk(
         } catch (error) {
             let errorMessage = "Failed to update profile";
             if (error instanceof AxiosError) {
-                errorMessage = error.response?.data?.error || errorMessage;
+                errorMessage = error.response?.data?.message || errorMessage;
             }
             return rejectWithValue(errorMessage);
         }
